@@ -56,7 +56,7 @@ namespace WhereFi
                     ((ApplicationBarMenuItem)this.ApplicationBar.MenuItems[0]).Text = "turn on location";
 
                     this.mapWhereFi.Visibility = System.Windows.Visibility.Collapsed;
-                    MessageBox.Show("You have disabled location services for this application. Rest Area works best when this feature is enabled.", "Location Disabled", MessageBoxButton.OK);
+                    MessageBox.Show("You have disabled location services for this application. WhereFi works best when this feature is enabled.", "Location Disabled", MessageBoxButton.OK);
                 }
             }
             else
@@ -92,11 +92,11 @@ namespace WhereFi
         {
             if (e.Status == GeoPositionStatus.Disabled)
             {
-                MessageBox.Show("Location services are not enabled for your phone. Rest Area works best when this feature is enabled.", "Location Disabled", MessageBoxButton.OK);
+                MessageBox.Show("Location services are not enabled for your phone. WhereFi works best when this feature is enabled.", "Location Disabled", MessageBoxButton.OK);
             }
             else if (e.Status == GeoPositionStatus.NoData)
             {
-                MessageBox.Show("Your location could not be determined, please try again later. Rest Area will use your most recent location until a new location is determined.", "Location Unavailable", MessageBoxButton.OK);
+                MessageBox.Show("Your location could not be determined, please try again later. WhereFi will use your most recent location until a new location is determined.", "Location Unavailable", MessageBoxButton.OK);
             }
         }
 
@@ -161,7 +161,7 @@ namespace WhereFi
             if (((Pivot)sender).SelectedItem == this.pviMapView)
             {
                 this.EnableProgressBar();
-                this.mapWhereFi.SetView(watcher.Position.Location, 10.0);
+                this.mapWhereFi.SetView(watcher.Position.Location, 15.0);
             }
         }
 
@@ -174,14 +174,14 @@ namespace WhereFi
         {
             WhereFiModel r = (WhereFiModel)((TextBlock)e.OriginalSource).DataContext;
 
-            NavigationService.Navigate(new Uri("/DetailsPage.xaml?name=" + r.Name + "&description=" + r.Description + "&options=" + r.Options + "&lat1=" + watcher.Position.Location.Latitude + "&lon1=" + watcher.Position.Location.Longitude + "&lat2=" + r.Latitude + "&lon2=" + r.Longitude, UriKind.Relative));
+            NavigationService.Navigate(new Uri("/DetailsPage.xaml?name=" + r.Name + "&description=" + r.Description + "&lat1=" + watcher.Position.Location.Latitude + "&lon1=" + watcher.Position.Location.Longitude + "&lat2=" + r.Latitude + "&lon2=" + r.Longitude, UriKind.Relative));
         }
 
         private void Pushpin_Tap(object sender, System.Windows.Input.GestureEventArgs e)
         {
             WhereFiModel r = (WhereFiModel)((Pushpin)sender).DataContext;
 
-            NavigationService.Navigate(new Uri("/DetailsPage.xaml?name=" + r.Name + "&description=" + r.Description + "&options=" + r.Options + "&lat1=" + watcher.Position.Location.Latitude + "&lon1=" + watcher.Position.Location.Longitude + "&lat2=" + r.Latitude + "&lon2=" + r.Longitude, UriKind.Relative));
+            NavigationService.Navigate(new Uri("/DetailsPage.xaml?name=" + r.Name + "&description=" + r.Description + "&lat1=" + watcher.Position.Location.Latitude + "&lon1=" + watcher.Position.Location.Longitude + "&lat2=" + r.Latitude + "&lon2=" + r.Longitude, UriKind.Relative));
         }
 
         private void mnuToggleLocation_Click(object sender, EventArgs e)
@@ -193,7 +193,7 @@ namespace WhereFi
                 ((ApplicationBarMenuItem)this.ApplicationBar.MenuItems[0]).Text = "turn on location";
 
                 this.mapWhereFi.Visibility = System.Windows.Visibility.Collapsed;
-                MessageBox.Show("You have disabled location services for this application. Rest Area works best when this feature is enabled.", "Location Disabled", MessageBoxButton.OK);
+                MessageBox.Show("You have disabled location services for this application. WhereFi works best when this feature is enabled.", "Location Disabled", MessageBoxButton.OK);
             }
             else
             {
@@ -226,9 +226,8 @@ namespace WhereFi
 
                 r.Latitude = Convert.ToDouble(row[1]);
                 r.Longitude = Convert.ToDouble(row[0]);
-                r.Name = row[2].Replace("REST AREA-", "").Replace("REST AREA", "").Replace("WELCOME CENTER-", "").Replace("WELCOME CENTER", "").Replace("SERVICE PLAZA-", "").Replace("SERVICE PLAZA", "").Replace("TRUCK PARKING", "").Replace("TRUCK", "").Replace("-PARKING", "").Replace("FOLLOW SIGNS", "").Replace("LEFT EXIT", "").Replace("TURNOUT", "").Trim();
-                r.Options = row[3];
-
+                r.Name = row[2].Trim();
+                
                 database.Add(r);
             }
         }

@@ -32,12 +32,6 @@ namespace WhereFi
             set;
         }
 
-        public string Options
-        {
-            get;
-            set;
-        }
-
         public string Description
         {
             get;

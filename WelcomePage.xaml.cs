@@ -12,7 +12,7 @@ using System.Windows.Shapes;
 using Microsoft.Phone.Controls;
 using System.IO.IsolatedStorage;
 
-namespace RestArea
+namespace WhereFi
 {
     public partial class WelcomePage : PhoneApplicationPage
     {

@@ -9,9 +9,9 @@ using System.Resources;
 [assembly: AssemblyTitle("WhereFi")]
 [assembly: AssemblyDescription("")]
 [assembly: AssemblyConfiguration("")]
-[assembly: AssemblyCompany("Microsoft")]
+[assembly: AssemblyCompany("Matt McCormick")]
 [assembly: AssemblyProduct("WhereFi")]
-[assembly: AssemblyCopyright("Copyright © Microsoft 2012")]
+[assembly: AssemblyCopyright("Copyright © Matt McCormick 2012")]
 [assembly: AssemblyTrademark("")]
 [assembly: AssemblyCulture("")]
 

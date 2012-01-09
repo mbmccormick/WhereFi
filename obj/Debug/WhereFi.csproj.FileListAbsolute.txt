@@ -18,3 +18,6 @@ c:\users\matt mccormick\documents\visual studio 2010\Projects\WhereFi\Bin\Debug\
 c:\users\matt mccormick\documents\visual studio 2010\Projects\WhereFi\Bin\Debug\Microsoft.Phone.Controls.Maps.xml
 c:\users\matt mccormick\documents\visual studio 2010\Projects\WhereFi\Bin\Debug\Microsoft.Phone.Controls.Toolkit.pdb
 c:\users\matt mccormick\documents\visual studio 2010\Projects\WhereFi\Bin\Debug\Microsoft.Phone.Controls.Toolkit.xml
+c:\users\matt mccormick\documents\visual studio 2010\Projects\WhereFi\obj\Debug\DetailsPage.g.i.cs
+c:\users\matt mccormick\documents\visual studio 2010\Projects\WhereFi\obj\Debug\WelcomePage.g.i.cs
+c:\users\matt mccormick\documents\visual studio 2010\Projects\WhereFi\Bin\Debug\Model\database.csv
