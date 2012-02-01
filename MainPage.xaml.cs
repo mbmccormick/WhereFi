@@ -204,6 +204,11 @@ namespace WhereFi
             }
         }
 
+        private void mnuPrivacyPolicy_Click(object sender, EventArgs e)
+        {
+            MessageBox.Show("WhereFi is a useful tool for every road warrior. This application uses your current location to find the nearest Wi-Fi hotspots around you. You can view the results on a map or in a list to find a location in your area. Your location information is only used for this purpose and is never shared.\n\nYou can opt out of sharing your location at any time from within the application. However, WhereFi works best with location features enabled.", "Privacy Policy", MessageBoxButton.OK);
+        }
+
         private void EnableProgressBar()
         {
             if (progressIndicator != null)
